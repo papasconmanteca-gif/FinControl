@@ -6,7 +6,6 @@
   <title>FinControl</title>
 
   <style>
-    /* ===== ESTILOS GENERALES ===== */
     * {
       margin: 0;
       padding: 0;
@@ -19,7 +18,6 @@
       color: #333;
     }
 
-    /* ===== ENCABEZADO ===== */
     header {
       background-color: #2c3e50;
       color: white;
@@ -38,7 +36,6 @@
       margin-top: 5px;
     }
 
-    /* ===== MENÚ DE NAVEGACIÓN ===== */
     nav {
       background-color: #1a252f;
       display: flex;
@@ -61,14 +58,12 @@
       background-color: #2980b9;
     }
 
-    /* ===== CONTENEDOR PRINCIPAL ===== */
     main {
       max-width: 900px;
       margin: 30px auto;
       padding: 0 15px;
     }
 
-    /* ===== SECCIONES ===== */
     section {
       background: white;
       border-radius: 8px;
@@ -85,13 +80,11 @@
       padding-bottom: 8px;
     }
 
-    /* ===== SECCIÓN INICIO ===== */
     #inicio p {
       line-height: 1.7;
       color: #555;
     }
 
-    /* ===== FORMULARIOS ===== */
     .form-grupo {
       margin-bottom: 12px;
     }
@@ -125,7 +118,6 @@
       gap: 12px;
     }
 
-    /* ===== BOTONES ===== */
     button {
       padding: 10px 22px;
       border: none;
@@ -157,7 +149,6 @@
       background-color: #c0392b;
     }
 
-    /* ===== TARJETAS DE RESUMEN ===== */
     .tarjetas {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -188,21 +179,19 @@
     .t-verde   { background-color: #27ae60; }
     .t-naranja { background-color: #e67e22; }
 
-    /* ===== MENSAJE FINANCIERO ===== */
     #mensaje-estado {
       margin-top: 18px;
       padding: 12px 16px;
       border-radius: 6px;
       font-size: 0.9rem;
       font-weight: bold;
-      display: none; /* Se muestra cuando hay datos */
+      display: none;
     }
 
     .msg-bajo     { background-color: #d5f5e3; color: #1e8449; border-left: 4px solid #27ae60; }
     .msg-moderado { background-color: #fef9e7; color: #b7770d; border-left: 4px solid #f1c40f; }
     .msg-alto     { background-color: #fadbd8; color: #922b21; border-left: 4px solid #e74c3c; }
 
-    /* ===== PROMEDIOS ===== */
     .promedios {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -227,8 +216,7 @@
       font-size: 1.1rem;
       color: #2c3e50;
     }
-
-    /* ===== TABLA ===== */
+    
     table {
       width: 100%;
       border-collapse: collapse;
@@ -259,7 +247,6 @@
       font-style: italic;
     }
 
-    /* ===== PIE DE PÁGINA ===== */
     footer {
       background-color: #2c3e50;
       color: #adb5bd;
@@ -272,7 +259,6 @@
       color: white;
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 600px) {
       .fila-dos        { grid-template-columns: 1fr; }
       .tarjetas        { grid-template-columns: 1fr; }
@@ -283,13 +269,11 @@
 
 <body>
 
-  <!-- ===== ENCABEZADO ===== -->
   <header>
     <h1>💰 FinControl</h1>
     <p>Administrá tus gastos personales de forma simple</p>
   </header>
 
-  <!-- ===== MENÚ ===== -->
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#presupuesto">Presupuesto</a>
@@ -299,7 +283,6 @@
 
   <main>
 
-    <!-- ===== SECCIÓN INICIO ===== -->
     <section id="inicio">
       <h2>¿Qué es FinControl?</h2>
       <p>
@@ -311,18 +294,15 @@
       </p>
     </section>
 
-    <!-- ===== SECCIÓN PRESUPUESTO ===== -->
     <section id="presupuesto">
       <h2>Presupuesto mensual</h2>
 
-      <!-- Formulario para ingresar el sueldo -->
       <div class="form-grupo">
         <label for="sueldo">Sueldo mensual ($)</label>
         <input type="number" id="sueldo" placeholder="Ej: 150000" min="0" />
       </div>
       <button class="btn-azul" onclick="guardarSueldo()">Guardar sueldo</button>
 
-      <!-- Tarjetas de resumen -->
       <div class="tarjetas" style="margin-top: 20px;">
         <div class="tarjeta t-azul">
           <p>Sueldo mensual</p>
@@ -342,11 +322,9 @@
         </div>
       </div>
 
-      <!-- Mensaje automático de estado financiero -->
       <div id="mensaje-estado"></div>
     </section>
 
-    <!-- ===== SECCIÓN REGISTRAR GASTO ===== -->
     <section id="registrar">
       <h2>Registrar gasto</h2>
 
@@ -384,7 +362,6 @@
       <button class="btn-azul" onclick="agregarGasto()">+ Agregar gasto</button>
     </section>
 
-    <!-- ===== SECCIÓN HISTORIAL ===== -->
     <section id="historial">
       <h2>Historial de gastos</h2>
 
@@ -406,7 +383,6 @@
       </table>
     </section>
 
-    <!-- ===== SECCIÓN PROMEDIOS ===== -->
     <section id="promedios">
       <h2>Promedios de gasto</h2>
       <div class="promedios">
@@ -427,58 +403,42 @@
 
   </main>
 
-  <!-- ===== PIE DE PÁGINA ===== -->
   <footer>
     <p><strong>FinControl</strong> — Proyecto escolar de administración financiera personal</p>
     <p style="margin-top: 6px;">Integrantes: Terry Calero · Franco Cannizaro · Leonidas Druetta</p>
   </footer>
 
 
-  <!-- ===== JAVASCRIPT ===== -->
   <script>
 
-    // =============================================
-    // VARIABLES GLOBALES
-    // Acá guardamos los datos mientras se usa la app
-    // =============================================
 
-    let sueldo = 0;          // Sueldo mensual ingresado
-    let gastos = [];         // Lista de gastos registrados
+    let sueldo = 0;          
+    let gastos = [];         
 
-    // Al cargar la página, ponemos la fecha de hoy en el formulario
     document.getElementById("fecha").valueAsDate = new Date();
 
-
-    // =============================================
-    // FUNCIÓN: Guardar el sueldo
-    // =============================================
 
     function guardarSueldo() {
       let valor = parseFloat(document.getElementById("sueldo").value);
 
-      // Validación: el sueldo tiene que ser un número positivo
       if (isNaN(valor) || valor <= 0) {
         alert("Por favor ingresá un sueldo válido.");
         return;
       }
 
       sueldo = valor;
-      actualizarResumen(); // Actualizamos las tarjetas con el nuevo sueldo
+      actualizarResumen(); 
     }
 
 
-    // =============================================
-    // FUNCIÓN: Agregar un gasto nuevo
-    // =============================================
-
     function agregarGasto() {
-      // Leemos los valores del formulario
+   
       let fecha       = document.getElementById("fecha").value;
       let descripcion = document.getElementById("descripcion").value.trim();
       let categoria   = document.getElementById("categoria").value;
       let monto       = parseFloat(document.getElementById("monto").value);
 
-      // Validaciones básicas
+
       if (!fecha) {
         alert("Por favor ingresá una fecha.");
         return;
@@ -492,9 +452,9 @@
         return;
       }
 
-      // Creamos el objeto gasto y lo guardamos en el array
+
       let nuevoGasto = {
-        id: Date.now(),   // ID único basado en la hora actual
+        id: Date.now(),   
         fecha,
         descripcion,
         categoria,
@@ -503,23 +463,20 @@
 
       gastos.push(nuevoGasto);
 
-      // Limpiamos los campos del formulario
+     
       document.getElementById("descripcion").value = "";
       document.getElementById("monto").value = "";
       document.getElementById("fecha").valueAsDate = new Date();
 
-      // Actualizamos la tabla y el resumen
+    
       actualizarTabla();
       actualizarResumen();
     }
 
 
-    // =============================================
-    // FUNCIÓN: Eliminar un gasto por su ID
-    // =============================================
 
     function eliminarGasto(id) {
-      // Filtramos el array sacando el gasto con ese ID
+    
       gastos = gastos.filter(function(g) {
         return g.id !== id;
       });
@@ -529,25 +486,22 @@
     }
 
 
-    // =============================================
-    // FUNCIÓN: Mostrar los gastos en la tabla
-    // =============================================
 
     function actualizarTabla() {
       let tbody = document.getElementById("tabla-gastos");
 
-      // Si no hay gastos, mostramos el mensaje vacío
+   
       if (gastos.length === 0) {
         tbody.innerHTML = '<tr id="sin-gastos"><td colspan="5">Todavía no hay gastos registrados.</td></tr>';
         return;
       }
 
-      // Generamos una fila por cada gasto
+
       let filas = "";
       for (let i = 0; i < gastos.length; i++) {
         let g = gastos[i];
 
-        // Formateamos la fecha de YYYY-MM-DD a DD/MM/YYYY
+    
         let partesFecha = g.fecha.split("-");
         let fechaMostrar = partesFecha[2] + "/" + partesFecha[1] + "/" + partesFecha[0];
 
@@ -564,13 +518,9 @@
     }
 
 
-    // =============================================
-    // FUNCIÓN: Actualizar tarjetas, promedios y mensaje
-    // =============================================
-
     function actualizarResumen() {
 
-      // Calculamos el total gastado sumando todos los montos
+   
       let totalGastado = 0;
       for (let i = 0; i < gastos.length; i++) {
         totalGastado += gastos[i].monto;
@@ -579,14 +529,11 @@
       let disponible  = sueldo - totalGastado;
       let porcentaje  = sueldo > 0 ? (totalGastado / sueldo) * 100 : 0;
 
-      // --- Actualizamos las 4 tarjetas ---
       document.getElementById("card-sueldo").textContent     = "$" + sueldo.toLocaleString("es-AR");
       document.getElementById("card-gastado").textContent    = "$" + totalGastado.toLocaleString("es-AR");
       document.getElementById("card-disponible").textContent = "$" + disponible.toLocaleString("es-AR");
       document.getElementById("card-porcentaje").textContent = porcentaje.toFixed(1) + "%";
 
-      // --- Calculamos los promedios ---
-      // Usamos la cantidad de días únicos en que se registraron gastos (mínimo 1)
       let diasUnicos = new Set(gastos.map(function(g) { return g.fecha; })).size;
       if (diasUnicos === 0) diasUnicos = 1;
 
@@ -598,8 +545,6 @@
       document.getElementById("prom-semanal").textContent = "$" + Math.round(promSemanal).toLocaleString("es-AR");
       document.getElementById("prom-mensual").textContent = "$" + Math.round(promMensual).toLocaleString("es-AR");
 
-      // --- Mensaje de estado financiero ---
-      // Solo lo mostramos si hay sueldo cargado
       let msgDiv = document.getElementById("mensaje-estado");
 
       if (sueldo === 0) {
@@ -610,17 +555,17 @@
       msgDiv.style.display = "block";
 
       if (porcentaje < 50) {
-        // Situación buena: gastó menos del 50%
+   
         msgDiv.className = "msg-bajo";
         msgDiv.textContent = "✅ Tu situación financiera es buena. Gastaste el " + porcentaje.toFixed(1) + "% de tu sueldo.";
 
       } else if (porcentaje < 80) {
-        // Situación moderada: entre 50% y 80%
+    
         msgDiv.className = "msg-moderado";
         msgDiv.textContent = "⚠️ Gastos moderados. Llevás el " + porcentaje.toFixed(1) + "% del sueldo gastado. Atención con los gastos.";
 
       } else {
-        // Situación crítica: más del 80%
+
         msgDiv.className = "msg-alto";
         msgDiv.textContent = "🚨 Gastos altos. Ya usaste el " + porcentaje.toFixed(1) + "% de tu sueldo. Intentá reducir gastos.";
       }
